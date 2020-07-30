@@ -1,4 +1,4 @@
-<a href="http://sadedegel.ai"><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logo.png" width="300" height="300" align="right" /></a>
+<a href="http://sadedegel.ai"><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logo.png" width="200" height="200" align="right" /></a>
 # Türkçe Haber Derlemi ve Haberlerin Kategorik Sınıflandırılması
 
 [Açık Kaynak Hackathon Programı 2020](https://www.acikhack.com/) için geliştirilen projede ana hedef &quot;Haber başlıkları üzerinden konu (kategori) tahmini&quot; olarak tanımlanmıştır.
@@ -13,7 +13,7 @@
 	- Özet bazı haberlerde bulunmamaktadır.
 - Temizlenmemiş hali ile 116.068 örnek bulunmaktadır. (sıkıştırılmamış hali ile 403.9Mb)
 
-## Gerekli Kütüphaneler
+## Gerekli Paketler
 Deneylerde kök bulma (stemming) işlemi yapılmış fakat sınıflandırma performansına katkısı gözlemlenmemiştir. Bu nedenle, projede TurkishStemmer [1]  paketi kullanılmamaktadır ama kullanıcı isterse pre_processing_tr.py paketindeki turkish_stemmer(s) methodunu kullanarak diledikleri cümlelerdeki kelimeleri köküne ulaşabilmektedir. 
 ```python
 import pickle
@@ -39,9 +39,7 @@ derleme_erisim adlı jupyter notebookta gösterildiği gibi dilediğiniz derlemi
 ```python
 data=pd.read_csv('derlemler/filtrelenmis_temizlenmis_derlem.csv.gz')
 ```
-
 ------------
-
 
 **Derlem sütunlarının anlamları:**
 - **news_title:** haber başlığı
@@ -71,7 +69,7 @@ Haber yazılarının makine öğrenmesi yöntemlerine uygun hale getirilmesi iç
 3. **Fazla boşluklardan kurtulma**
 	- Sayıların, noktalama işaretlerinin temizlenmesi sırasında iki kelime arası birden fazla boşluk oluşmuştur. Bu boşluklar tek boşluk olucak şekilde değiştirilnmiştir.
 
-4. **Türkçe dolgu sözcüklerinin (stop words) çıkarılması **
+4. **Türkçe dolgu sözcüklerinin (stop words) çıkarılması**
 	- Türkçe Dolgu Sözcükleri (stop words) sık kullanılan, fakat iptal metinden çıkarıldıklarında cümlenin anlamında önemli değişiklikler oluşturmayan sözcüklerdir. Necmettin Çarkacı&apos;nın GitHub hesabında paylaşılan [2] dolgu sözcükleri listesine göre vektöre dönüştürülme esnasında metinlerden bu sözcükler çıkarılmıştır.
 
 5. **Kök bulma (stemming)**
@@ -151,18 +149,18 @@ Haber metinleri üzerinden oluşturduğumuz modeller daha başarılı olduğu, p
 ------------
 
 **Haber türüne göre örnek sayıları:**
-**Gündem:** 21031
-**Ekonomi:** 11165
-**Spor:** 10699
-**Siyaset:** 14530
-**Dünya:** 4792
-**Yaşam:** 1696
-**Pazar:** 2090
-**Ege:** 6131
-**Magazin:** 3980
-**Kültür_Sanat:** 1265
-**Teknoloji_Bilim:** 3105
-**Cumartesi:** 923
+- **Gündem:** 21031
+- **Ekonomi:** 11165
+- **Spor:** 10699
+- **Siyaset:** 14530
+- **Dünya:** 4792
+- **Yaşam:** 1696
+- **Pazar:** 2090
+- **Ege:** 6131
+- **Magazin:** 3980
+- **Kültür_Sanat:** 1265
+- **Teknoloji_Bilim:** 3105
+- **Cumartesi:** 923
 
 ## Sınıflandırma Modelinin Oluşturulması
 - Sınıflandırma işlemi öncesi sklearn kütüphanesi üzerinden CountVectorizer fonksiyonu ile haber metinleri vektöre çevrilmiştir.
@@ -175,10 +173,15 @@ Haber metinleri üzerinden oluşturduğumuz modeller daha başarılı olduğu, p
 	- Çeşitli parametreler ile çapraz geçerleme (cross validation) yapılmış ve en uygun (optimize) şekle getirilmiştir. [%70 train (eğitim), %30 test (deney)]
 	- SVM, Random Forests, XGBoost, Yapay sinir ağları gibi daha karmaşık algoritmalar da denenmiştir fakat performans olarak Çokterimli Naive Bayes’e göre geride kaldıkları için analize eklenmemişlerdir.
 
+------------
+
+Model oluşturma aşamaları **model_oluşturma** adlı jupyter notebook üzerinden incelenebilir.
+
 ## Veri Üzerinde Keşif
 
 ## Referanslar
 [1] Turkish Stemmer, Osman Tunçelli, [link](https://github.com/otuncelli/turkish-stemmer-python "link")
+
 [2] Türkçe Dolgu Sözcükleri, Necmettin Çarkacı, [link](https://github.com/ncarkaci/tr-preprocessing "link")
 
 <a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logolar.png" align="left" /></a>
