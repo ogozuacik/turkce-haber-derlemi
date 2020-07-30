@@ -1,4 +1,4 @@
-<a href="http://sadedegel.ai"><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logo.png" width="200" height="200" align="right" /></a>
+<a href="http://sadedegel.ai"><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logo.png" width="300" height="300" align="right" /></a>
 # Türkçe Haber Derlemi ve Haberlerin Kategorik Sınıflandırılması
 
 [Açık Kaynak Hackathon Programı 2020](https://www.acikhack.com/) için geliştirilen projede ana hedef &quot;Haber başlıkları üzerinden konu (kategori) tahmini&quot; olarak tanımlanmıştır.
