@@ -31,9 +31,9 @@ from sklearn.metrics import accuracy_score
 Proje kapsamında 3 farklı derlem paylaşılmıştır.
 **milliyet_derlem.csv.gz:** Haberler milliyet.com&apos;dan çekildiği gibi saklanmıştır.
 
-**temizlenmis_derlerm.csv.gz: ** Bazı kategorilerde bulunan haberler atılmıştır. Benzer kategorideki haber türleri birleştirilmiştir. Konu hakkında detaylı bilgi için "Veri Temizliği ve Düzenlenmesi" kısmını okuyabilirsiniz.
+**temizlenmis_derlerm.csv.gz: ** Bazı kategorilerde bulunan haberler atılmıştır. Benzer kategorideki haber türleri birleştirilmiştir. Konu hakkında detaylı bilgi için yazının *&quot;Veri Temizliği ve Düzenlenmesi&quot;* kısmını okuyabilirsiniz.
 
-**filtrelenmis_temizlenmis_derlem.csv.gz:** Ön işleme sonucu filtrelenmiş haberleri içerir. Ön işleme adımları hakkında detaylı bilgi için "" okuyabilirsiniz.
+**filtrelenmis_temizlenmis_derlem.csv.gz:** Ön işleme sonucu filtrelenmiş haberleri içerir. Ön işleme adımları hakkında detaylı bilgi için yazının *&quot;Haber Metinlerinde Ön İşleme&quot;* kısmını okuyabilirsiniz.
 
 derleme_erisim adlı jupyter notebookta gösterildiği gibi dilediğiniz derlemi ismini vererek açabilirsiniz.
 ```python
@@ -47,14 +47,12 @@ data=pd.read_csv('derlemler/filtrelenmis_temizlenmis_derlem.csv.gz')
 - **news_title:** haber başlığı
 - **summary:** haber özeti
 - **category:**  haberin kategorisi (filtrelenmiş)
-- **date:** haberin paylaşıldığı gün (Bazı haberlerde bu tarihte sapmalar bulunmaktadır)
+- **date:** haberin paylaşıldığı gün (bazı haberlerde bu tarihte sapmalar bulunmaktadır)
 - **link:** haberin çekildiği bağlantı adresi
 - **news:** haber metni
-- **category_backup:** haberin orijinal (milliyet sitesinde bulunduğu) kategori 
+- **category_backup:** haberin orijinal (milliyet sitesinde bulunduğu) kategori
 
 ------------
-
-
 
 **Filtrelenmiş-temizlenmiş derlemin ilk 5 örneği:**
 <a href="http://sadedegel.ai"><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/dataset.png" /></a>
@@ -81,9 +79,7 @@ Haber yazılarının makine öğrenmesi yöntemlerine uygun hale getirilmesi iç
 
 ------------
 
-
-
-**Ön işleme adımlarının (1-3), istenen yazıda yapılması gereken adımlar:**
+**Ön işleme adımlarının (1-3), istenen yazıda yapılması için gereken adımlar:**
 ```python
 import pre_processing_tr as pr
 
@@ -92,7 +88,6 @@ islenmis_yazi = pr.pre_process(text)
 ```
 
 ------------
-
 
 **Kök bulma metotunun kullanılması için gereken adımlar**
 ```python
@@ -118,11 +113,9 @@ Command promp&apos;ta yukarıdaki dosyaların bulunduğu yere geldikten sonra py
 
 ------------
 
-
 Kullanım rahatlığı açısından **kategorik_sınıflandırma** adlı jupyter notebook&apos;u kullanmanız tavsiye edilir.
 
 ------------
-
 
 **Sonuçlar**
 
@@ -130,12 +123,12 @@ Kullanım rahatlığı açısından **kategorik_sınıflandırma** adlı jupyter
 | :------------: | :------------: | :------------: | :------------: |
 | 4-kategori  | %71.3 | %82.2  | %85.5   |
 |  5-kategori | %66.1  | %79.3  | %80.9  |
+
 **Tablo:** Veri türüne ve kategori sayısına göre sınıflandırma performansları (doğruluk)
 
 Haber metinleri üzerinden oluşturduğumuz modeller daha başarılı olduğu, projede onlar kullanılmıştır.
 
 ------------
-
 
 **Kategorilere göre en çok geçen kelimeler:**
 - **Ekonomi:** 'önemli', 'türk', 'dolar', 'yıl', 'yüzde'
@@ -153,8 +146,9 @@ Haber metinleri üzerinden oluşturduğumuz modeller daha başarılı olduğu, p
 
 ------------
 
+**Filtrelenmiş ve temizlenmiş derlemde bulunan toplam haber sayısı:** 81407
 
-**Filtrelenmiş ve temizlenmiş derlemde bulunan toplam haber sayısı: ** 81407
+------------
 
 **Haber türüne göre örnek sayıları:**
 **Gündem:** 21031
@@ -170,7 +164,20 @@ Haber metinleri üzerinden oluşturduğumuz modeller daha başarılı olduğu, p
 **Teknoloji_Bilim:** 3105
 **Cumartesi:** 923
 
-##Referanslar
+## Sınıflandırma Modelinin Oluşturulması
+- Sınıflandırma işlemi öncesi sklearn kütüphanesi üzerinden CountVectorizer fonksiyonu ile haber metinleri vektöre çevrilmiştir.
+	- BoW (Bag of words) yöntemi kullanılmıştır. Vektörde her sütun bir kelimeyi, her satır ise haberde o kelimenin kaç defa geçtiğini temsil etmektedir. Tf–idf yöntemi de denenmiştir fakat performansı BoW’e göre geride kaldığı için analize eklenmemiştir.
+	- Vektöre dönüştürülme esnasında metinlerden türkçe dolgu sözcükleri (stop words) *&quot;Haber Metinlerinde Ön İşleme&quot;*  kısmında belirtildiği gibi çıkarılmıştır.
+
+------------
+
+- Model olarak Çokterimli Naive Bayes (Multinomial Naive Bayes) sınıflandırıcı kullanılmıştır.
+	- Çeşitli parametreler ile çapraz geçerleme (cross validation) yapılmış ve en uygun (optimize) şekle getirilmiştir. [%70 train (eğitim), %30 test (deney)]
+	- SVM, Random Forests, XGBoost, Yapay sinir ağları gibi daha karmaşık algoritmalar da denenmiştir fakat performans olarak Çokterimli Naive Bayes’e göre geride kaldıkları için analize eklenmemişlerdir.
+
+## Veri Üzerinde Keşif
+
+## Referanslar
 [1] Turkish Stemmer, Osman Tunçelli, [link](https://github.com/otuncelli/turkish-stemmer-python "link")
 [2] Türkçe Dolgu Sözcükleri, Necmettin Çarkacı, [link](https://github.com/ncarkaci/tr-preprocessing "link")
 
