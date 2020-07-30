@@ -1,4 +1,4 @@
-<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logo.png" width="200" height="200" align="right" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logo.png" width="250" height="250" align="right" /></a>
 # Türkçe Haber Derlemi ve Haberlerin Kategorik Sınıflandırılması
 
 [Açık Kaynak Hackathon Programı 2020](https://www.acikhack.com/) için geliştirilen projede ana hedef &quot;Haber başlıkları üzerinden konu (kategori) tahmini&quot; olarak tanımlanmıştır.
@@ -31,11 +31,11 @@ from sklearn.metrics import accuracy_score
 Proje kapsamında 3 farklı derlem paylaşılmıştır.
 **milliyet_derlem.csv.gz:** Haberler milliyet.com&apos;dan çekildiği gibi saklanmıştır.
 
-**temizlenmis_derlerm.csv.gz: ** Bazı kategorilerde bulunan haberler atılmıştır. Benzer kategorideki haber türleri birleştirilmiştir. Konu hakkında detaylı bilgi için yazının *&quot;Veri Temizliği ve Düzenlenmesi&quot;* kısmını okuyabilirsiniz.
+**temizlenmis_derlerm.csv.gz:** Bazı kategorilerde bulunan haberler atılmıştır. Benzer kategorideki haber türleri birleştirilmiştir. Konu hakkında detaylı bilgi için yazının *&quot;Veri Temizliği ve Düzenlenmesi&quot;* kısmını okuyabilirsiniz.
 
 **filtrelenmis_temizlenmis_derlem.csv.gz:** Ön işleme sonucu filtrelenmiş haberleri içerir. Ön işleme adımları hakkında detaylı bilgi için yazının *&quot;Haber Metinlerinde Ön İşleme&quot;* kısmını okuyabilirsiniz.
 
-derleme_erisim adlı jupyter notebookta gösterildiği gibi dilediğiniz derlemi ismini vererek açabilirsiniz.
+**derleme_erisim** adlı jupyter notebookta gösterildiği gibi dilediğiniz derlemi ismini vererek açabilirsiniz.
 ```python
 data=pd.read_csv('derlemler/filtrelenmis_temizlenmis_derlem.csv.gz')
 ```
