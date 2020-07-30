@@ -1,4 +1,4 @@
-<a href="http://sadedegel.ai"><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logo.png" width="200" height="200" align="right" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logo.png" width="200" height="200" align="right" /></a>
 # Türkçe Haber Derlemi ve Haberlerin Kategorik Sınıflandırılması
 
 [Açık Kaynak Hackathon Programı 2020](https://www.acikhack.com/) için geliştirilen projede ana hedef &quot;Haber başlıkları üzerinden konu (kategori) tahmini&quot; olarak tanımlanmıştır.
@@ -53,7 +53,7 @@ data=pd.read_csv('derlemler/filtrelenmis_temizlenmis_derlem.csv.gz')
 ------------
 
 **Filtrelenmiş-temizlenmiş derlemin ilk 5 örneği:**
-<a href="http://sadedegel.ai"><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/dataset.png" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/dataset.png" /></a>
 
 ## Haber Metinlerinde Ön İşleme
 Haber yazılarının makine öğrenmesi yöntemlerine uygun hale getirilmesi için gereken adımlar:
@@ -178,6 +178,24 @@ Haber metinleri üzerinden oluşturduğumuz modeller daha başarılı olduğu, p
 Model oluşturma aşamaları **model_oluşturma** adlı jupyter notebook üzerinden incelenebilir.
 
 ## Veri Üzerinde Keşif
+- Haberlerin paylaşıldığı tarih bilgisini kullanarak kelimelerin aya ve yıla göre haberlerde bulunma durumlarını inceleyebiliriz. Bu sayede kişilerin, kurumların, vs. 1997-2019 yılları arasında medyada ne kadar yer kapladıkları gözlemlenebilmekte ve bunun üzerine çıkarımlar yapılabilmektedir. 
+- Aşağıdaki grafiklerde seçili kelimelerin tarihe göre haberlerde ne kadar bulunduğunu göstermektedir. Lejandda parantez içerisindeki değer yanında bulunduğu kelimenin toplam geçtiği haber sayısıdır.
+- Örneğin ilk grafik Erdoğan, Kılıçdaroğlu, Bahçeli ve Baykal kelimeleri ile elde edilen sonuçları içermektedir. 1996-1998 yılları arası Bahçeli ve Baykal hakkında daha çok haber çıkarken Erdoğan&apos;ın haber sayısı onlara göre azdır. O dönemde siyasi olarak ön planda olmayan Kılıçdaroğlu hakkında haber neredeyse hiç yoktur. 1998 sonrası dönemde Erdoğan baskın bir biçimde medyada yer almaktadır.
+- Bir diğer göze çarpan detay ise Baykal ve Kılıçdaroğlu ile ilgilidir. 2010 yılında Kılıçdaroğlu Baykal&apos;ın yerine CHP genel başkanlığına seçilmiştir. Öncesinde hakkında neredeyse hiç haber yokken Baykal&apos;ı zamanla geçmiştir. Baykal&apos;ı içeren haberler ise o yıl sonrasında azalmış ve 2013 yılı itibari ile sıfıra yaklaşmıştır.
+
+
+<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot1.png" align="left" /></a>
+
+- Bir diğer analiz ise cumhurbaşkanı ve başbakan kelimeleri üzerinden yapılabilir. Aşağıdaki grafik bu iki kelime ile elde edilen sonuçları içermektedir. 2016 yılına kadar başbakan medyada daha ön planda iken 2016 yılında başkanlık sistemi referendumunun sinyalleri ile cumhurbaşkanı ön plana çıkmaya başlamıştır. 2017 yılında başkanlık sisteminin kabulü ile cumhurbaşkanı ile ilgili yapılan haberler başbakan hakkında yapılan haber sayısını geçmiştir.
+
+<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot2.png" align="left" /></a>
+
+- Yukarıda incelenen örnekler gibi birçok durum benzer şekilde analiz edilebilir. 
+
+------------
+
+**haberlerde_kesif** adlı jupyter notebook ile kendi istediğiniz kelimeler ile grafik oluşturabilir ya da örnek grafikleri inceliyebilirsiniz.
+
 
 ## Referanslar
 [1] Turkish Stemmer, Osman Tunçelli, [link](https://github.com/otuncelli/turkish-stemmer-python "link")
