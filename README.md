@@ -107,7 +107,7 @@ Kendi istediğiniz haberleri sınıflandırmak için bu iki modelden birini kull
 - 4-kategorili sınıflandırma için **4_kategori_tahmin.py**
 - 5 kategorili sınıflandırm için **5_kategori_tahmin.py**
 
-Command promp&apos;ta yukarıdaki dosyaların bulunduğu yere geldikten sonra python 5_kategori_tahmin.py yazarak çalıştırılmalı ve daha sonra sınıflandırmak istenen metin girilmelidir.
+Hazır modelleri çalıştırmak için command promp&apos;ta proje dizinine gelinmeli ve **python 5_kategori_tahmin.py** yazarak çalıştırılmalıdır. Daha sonra sınıflandırmak istenen metin girilmelidir.
 
 ------------
 
@@ -195,6 +195,11 @@ Model oluşturma aşamaları **model_oluşturma** adlı jupyter notebook üzerin
 ------------
 
 **haberlerde_kesif** adlı jupyter notebook ile kendi istediğiniz kelimeler ile grafik oluşturabilir ya da örnek grafikleri inceliyebilirsiniz.
+
+------------
+
+Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için command promp&apos;ta proje dizinine gelinmeli ve **python haberlerde_kesif_cizici.py** yazarak çalıştırılmalıdır. Daha sonra istenilen kelimeler sistem uyarı verdiğinde (veritabanın büyüklüğü sebebi ile biraz bekletmektedir) aralarında bir boşluk olarak girilmelidir.
+
 
 
 ## Referanslar
