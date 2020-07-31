@@ -208,12 +208,8 @@ Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için comm
 
 <a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot3.png" align="left" /></a>
 
-
-------------
-
 **twitter_kesif** adlı jupyter notebook ile aşama aşama yukarıda anlatılanları inceleyebilirsiniz.
 
-------------
 
 ## Metinlerde Önemli Noktaları Bulma ve Özet Çıkarımı
 
