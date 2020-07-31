@@ -185,11 +185,11 @@ Model oluşturma aşamaları **model_oluşturma** adlı jupyter notebook üzerin
 - Bir diğer göze çarpan detay ise Baykal ve Kılıçdaroğlu ile ilgilidir. 2010 yılında Kılıçdaroğlu Baykal&apos;ın yerine CHP genel başkanlığına seçilmiştir. Öncesinde hakkında neredeyse hiç haber yokken Baykal&apos;ı zamanla geçmiştir. Baykal&apos;ı içeren haberler ise o yıl sonrasında azalmış ve 2013 yılı itibari ile sıfıra yaklaşmıştır.
 
 
-<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot1.png" align="left" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot1.png" align="center" /></a>
 
 - Bir diğer analiz ise cumhurbaşkanı ve başbakan kelimeleri üzerinden yapılabilir. Aşağıdaki grafik bu iki kelime ile elde edilen sonuçları içermektedir. 2016 yılına kadar başbakan medyada daha ön planda iken 2016 yılında başkanlık sistemi referendumunun sinyalleri ile cumhurbaşkanı ön plana çıkmaya başlamıştır. 2017 yılında başkanlık sisteminin kabulü ile cumhurbaşkanı ile ilgili yapılan haberler başbakan hakkında yapılan haber sayısını geçmiştir.
 
-<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot2.png" align="left" /></a>
+<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot2.png" align="center" /></a>
 
 - Yukarıda incelenen örnekler gibi birçok durum benzer şekilde analiz edilebilir. 
 
@@ -206,10 +206,7 @@ Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için comm
 
 - Tweetler haberler gibi ön-işleme adımlarından geçirilmiş ve geliştirmiş olduğumuz model ile sınıflandırılmıştır. Sonuçlar aşağıdaki grafikte verilmiştir. Ön-işleme adımları haber verisi işlemeye daha uygun olduğu için bazı tweetlerde temizleme işlemi sonucu linklerden ya da emojilerden artıklar kalmıştır.
 
-<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot3.png" align="left" /></a>
-
-
-
+<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot3.png" align="center" /></a>
 
 ------------
 
@@ -251,9 +248,5 @@ from sklearn.metrics.pairwise import cosine_similarity
 [3] TextRank: Bringing Order into Texts, [link](https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf "link")
 
 <a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logolar.png" align="left" /></a>
-
-
-
-
 
 
