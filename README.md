@@ -5,6 +5,9 @@
 - Milliyet.com üzerinden 1997-2019 yılları arası çıkan haberler kullanılmıştır. Derlem açık kaynak olarak paylaşılmıştır.
 - Haber başlıklarına ek olarak haber metni ve özeti üzerinden de konu (kategorinin) tahmin edilmesi sağlanmıştır.
 - Sonuçlar üzerine analiz sunulmuştur.
+- Oluşturulan model ile son 6 aydaki twitter gündemi incelenmiştir.
+
+Ek olarak çıkarım-bazlı özetleme (extractive summarization) algoritması olan Text Rank [3] kullanılarak metinlerde önemli noktaların bulunması ve özet çıkarımı sağlanmıştır.
 
 ## Türkçe Haber Derleminin Oluşturulması
 - Milliyet.com adresinden 1997-2019 yılları arasında çıkan, haberler büyük oranda çekilmiştir.
