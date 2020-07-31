@@ -39,7 +39,7 @@ Proje kapsamında 3 farklı derlem paylaşılmıştır.
 
 **filtrelenmis_temizlenmis_derlem.csv.gz:** Ön-işleme sonucu filtrelenmiş haberleri içerir. Ön-işleme adımları hakkında detaylı bilgi için yazının *&quot;Haber Metinlerinde Ön-İşleme&quot;* kısmını okuyabilirsiniz.
 
-**derleme_erisim** adlı jupyter notebookta gösterildiği gibi dilediğiniz derlemi ismini vererek açabilirsiniz.
+**derleme_erisim** adlı jupyter notebookta gösterildiği gibi dilediğiniz derlemi ismini yazarak açabilirsiniz.
 ```python
 data=pd.read_csv('derlemler/filtrelenmis_temizlenmis_derlem.csv.gz')
 ```
@@ -111,7 +111,7 @@ Kendi istediğiniz haberleri sınıflandırmak için bu iki modelden birini kull
 - 4-kategorili sınıflandırma için **4_kategori_tahmin.py**
 - 5 kategorili sınıflandırm için **5_kategori_tahmin.py**
 
-Hazır modelleri çalıştırmak için command promp&apos;ta proje dizinine gelinmeli ve **python 5_kategori_tahmin.py** yazarak çalıştırılmalıdır. Daha sonra sınıflandırmak istenen metin girilmelidir.
+Hazır modelleri çalıştırmak için command promp&apos;ta (komut istemi) proje dizinine gelinmeli ve **python 5_kategori_tahmin.py** yazarak çalıştırılmalıdır. Daha sonra sınıflandırmak istenen metin girilmelidir.
 
 ------------
 
@@ -173,9 +173,9 @@ Haber metinleri üzerinden oluşturduğumuz modeller daha başarılı olduğu, p
 
 ------------
 
-- Model olarak Çokterimli Naive Bayes (Multinomial Naive Bayes) sınıflandırıcı kullanılmıştır.
+- Model olarak Çok-terimli Naive Bayes (Multinomial Naive Bayes) sınıflandırıcı kullanılmıştır.
 	- Çeşitli parametreler ile çapraz geçerleme (cross validation) yapılmış ve en uygun (optimize) şekle getirilmiştir. [%70 train (eğitim), %30 test (deney)]
-	- SVM, Random Forests, XGBoost, Yapay sinir ağları gibi daha karmaşık algoritmalar da denenmiştir fakat performans olarak Çokterimli Naive Bayes’e göre geride kaldıkları için analize eklenmemişlerdir.
+	- SVM, Random Forests, XGBoost, Yapay sinir ağları gibi daha karmaşık algoritmalar da denenmiştir fakat performans olarak Çok-terimli Naive Bayes’e göre geride kaldıkları için analize eklenmemişlerdir.
 
 ------------
 
@@ -202,7 +202,7 @@ Model oluşturma aşamaları **model_oluşturma** adlı jupyter notebook üzerin
 
 ------------
 
-Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için command promp&apos;ta proje dizinine gelinmeli ve **python haberlerde_kesif_cizici.py** yazarak çalıştırılmalıdır. Daha sonra istenilen kelimeler sistem uyarı verdiğinde (veritabanın büyüklüğü sebebi ile biraz bekletmektedir) aralarında bir boşluk olarak girilmelidir.
+Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için command promp&apos;ta (komut istemi) proje dizinine gelinmeli ve **python haberlerde_kesif_cizici.py** yazarak çalıştırılmalıdır. Daha sonra istenilen kelimeler sistem uyarı verdiğinde (veritabanın büyüklüğü sebebi ile biraz bekletmektedir) aralarında bir boşluk olarak girilmelidir.
 
 ## Twitter Üzerinden Gündem İncelemesi 
 - Twitter'da @nedenttoldu gibi birçok twitter gündemi anlık olarak yazan hesaplar bulunmaktadır. Bu hesaplar konular ya da kişiler neden TT oldu, 'Trending topics' listesindeki kelimelerin nedeni gibi konularda yazı yazmaktadırlar. Bu tarz hesapların incelenmesi ile twitter gündemini gün ve ay olmak üzere inceleyebiliriz. 11 Temmuz 2020 ile 3 Aralık 2019 tarihleri arasında @nedenttoldu hesabının attığı bütün tweetler çekilmiştir. Zaman aralığının dar olma sebebi Twitter'ın koymuş olduğu 3200 tweetlik sınırlamadır.
@@ -236,7 +236,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 ------------
 
-**ozetci** adlı jupyter notebook ile milliyet derleminden seçeceğiniz herhangi bir haberi ya da dilediğiniz metnin önemli noktalarını çıkarabilirsiniz. İlgili dökümanda kademe kademe adımlar anlatılmıştır.
+**ozetci** adlı jupyter notebook ile milliyet derleminden seçeceğiniz herhangi bir haberi ya da dilediğiniz metnin önemli noktalarını çıkarabilirsiniz. İlgili dökümanda adımlar kademe kademe anlatılmıştır.
 
 ------------
 
