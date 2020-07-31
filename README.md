@@ -136,7 +136,7 @@ Haber metinleri üzerinden oluşturduğumuz modeller daha başarılı olduğu, p
 - **Teknoloji_Bilim:** 'akıllı', 'samsung', 'galaxy', 'apple', 'yeni'
 
 ## Veri Temizliği ve Düzenlenmesi
-- Temizlenmemiş derlemde toplam X kategori bulunmaktadır. Bu kategorilerden bazıları köşe yazarlarıdır. Bazı kategorilerde 10'dan az haber bulunmaktadır.
+- Temizlenmemiş derlemde toplam 199 kategori bulunmaktadır. Bu kategorilerden bazıları köşe yazarlarıdır. Bazı kategorilerde 10'dan az haber bulunmaktadır.
 - Kategorilerin birleştirilmesi ve silinmesi:
 	- Futbol, Skorer, Basketbol, Fenerbahçe, Galatasaray, Beşiktaş… gibi spor ile alakalı haberlere genel bir kategori oluşturulup "Spor" adı verillmiştir.
 	- Teknoloji_Bilim, Magazin, Yaşam ve Dünya kategorileri de yukarıdaki mantık ile birden fazla kategorinin birleştirilmesi ile oluşturulmuştur.
@@ -203,7 +203,6 @@ Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için comm
 
 ## Twitter Üzerinden Gündem İncelemesi 
 - Twitter'da @nedenttoldu gibi birçok twitter gündemi anlık olarak yazan hesaplar bulunmaktadır. Bu hesaplar konular ya da kişiler neden TT oldu, 'Trending topics' listesindeki kelimelerin nedeni gibi konularda yazı yazmaktadırlar. Bu tarz hesapların incelenmesi ile twitter gündemini gün ve ay olmak üzere inceleyebiliriz. 11 Temmuz 2020 ile 3 Aralık 2019 tarihleri arasında @nedenttoldu hesabının attığı bütün tweetler çekilmiştir. Zaman aralığının dar olma sebebi Twitter'ın koymuş olduğu 3200 tweetlik sınırlamadır.
-
 - Tweetler de haberler gibi ön-işleme adımlarından geçirilmiş ve geliştirmiş olduğumuz model (5-kategori) ile sınıflandırılmıştır. 7 günlük kayan pencere içerisinde kategorilere göre toplam kaç tweet atıldığı hesaplanmıştır. Sonuçlar aşağıdaki grafikte verilmiştir (lejandda parantez içerisinde verilen değer toplam o kategoride sınıflandırlan tweet sayısıdır). Ön-işleme adımları haber verisi işlemeye daha uygun olduğu için bazı tweetlerde temizleme işlemi sonucu linklerden ya da emojilerden artıklar kalmıştır.
 
 <a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot3.png" align="center" /></a>
@@ -216,10 +215,9 @@ Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için comm
 
 ## Metinlerde Önemli Noktaları Bulma ve Özet Çıkarımı (Ek Bölüm)
 
-- Metinlerde çıkarım-bazlı özetleme (extractive summarization) günümüzde dikkat çeken araştırma konularından biri olmuştur. Açık Hack yarışmalarında (2019-2020) bu konu ile ilgili birden fazla proje gözlemlenebilmektedir.  
-
+- Metinlerde çıkarım-bazlı özetleme (extractive summarization) günümüzde dikkat çeken konulardan biri olmuştur. Açık Hack yarışmalarında (2019-2020) bu konu ile ilgili birden fazla proje gözlemlenebilmektedir.  
 - Projeye kapsamına ek olarak Text Rank [3] algoritması kullanılarak metin özetleyici ve önemli noktaları bulan bir model geliştirilmiştir. Model cümle vektörlerinin benzerlikleri üzerine bir çizge (graph) kurmaktadır. Bu graph üzerinde PageRank Algoritması ile en çok ziyaret edilen nokta (cümle) bulunmakta ve metindeki en önemli cümle seçilmektedir. Birden fazla cümle seçilir ise (en çok ziyaret edilenden en aza) bir özet ortaya çıkmaktadır. Algoritma önemli cümleleri bulmakta özelleştiği için genellikle özetlerde seçilen cümleler düzgün olsa da oluşan özet metni cümlelerin sıralaması açısından devrik olmaktadır.
-
+- Haberlerdeki yazım ve noktalama hataları nedeniyle bazı özel durumlarda metinleri cümle cümle ayıran metot düzgün çalışmamakta ve algoritmayı olumsuz yönde etkilemektedir. Bu nedenle kullanılacak olan haber metninin düzgün seçilmesi önemlidir.
 - Projenin geri kalanından bağımsız olarak FastText ve NetworkX kütüphaneleri kullanılmıştır. Vektör oluşturulmasında FastText kütüphanesinin oluşturmuş olduğu türkçe vektör modeli kullanılmıştır. Özetlemenin çalışması için [link](https://fasttext.cc/docs/en/crawl-vectors.html "link")'te bulunan sayfadan Türkçe için yapılmış ".bin" uzantılı dosyanın indirilmesi gerekmektedir.
 
 **Gereken ek paketler:**
