@@ -29,11 +29,12 @@ from sklearn.metrics import accuracy_score
 ```
 ## Türkçe Haber Derlemine Erişim
 Proje kapsamında 3 farklı derlem paylaşılmıştır.
+
 **milliyet_derlem.csv.gz:** Haberler milliyet.com&apos;dan çekildiği gibi saklanmıştır.
 
 **temizlenmis_derlerm.csv.gz:** Bazı kategorilerde bulunan haberler atılmıştır. Benzer kategorideki haber türleri birleştirilmiştir. Konu hakkında detaylı bilgi için yazının *&quot;Veri Temizliği ve Düzenlenmesi&quot;* kısmını okuyabilirsiniz.
 
-**filtrelenmis_temizlenmis_derlem.csv.gz:** Ön işleme sonucu filtrelenmiş haberleri içerir. Ön işleme adımları hakkında detaylı bilgi için yazının *&quot;Haber Metinlerinde Ön İşleme&quot;* kısmını okuyabilirsiniz.
+**filtrelenmis_temizlenmis_derlem.csv.gz:** Ön-işleme sonucu filtrelenmiş haberleri içerir. Ön-işleme adımları hakkında detaylı bilgi için yazının *&quot;Haber Metinlerinde Ön-İşleme&quot;* kısmını okuyabilirsiniz.
 
 **derleme_erisim** adlı jupyter notebookta gösterildiği gibi dilediğiniz derlemi ismini vererek açabilirsiniz.
 ```python
@@ -55,7 +56,7 @@ data=pd.read_csv('derlemler/filtrelenmis_temizlenmis_derlem.csv.gz')
 **Filtrelenmiş-temizlenmiş derlemin ilk 5 örneği:**
 <a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/dataset.png" /></a>
 
-## Haber Metinlerinde Ön İşleme
+## Haber Metinlerinde Ön-İşleme
 Haber yazılarının makine öğrenmesi yöntemlerine uygun hale getirilmesi için gereken adımlar:
 1.  **Genel yazım hatalarının düzeltilmesi**
 	- Verilerde genel olarak bulunan yazım hataları düzeltilmiştir.
@@ -77,11 +78,11 @@ Haber yazılarının makine öğrenmesi yöntemlerine uygun hale getirilmesi iç
 
 ------------
 
-**Ön işleme adımlarının (1-3), istenen yazıda yapılması için gereken adımlar:**
+**Ön-işleme adımlarının (1-3), istenen yazıda yapılması için gereken adımlar:**
 ```python
 import pre_processing_tr as pr
 
-yazi = "Ön işlemden geçirmek istenilen yazı"
+yazi = "Ön-işlemden geçirmek istenilen yazı"
 islenmis_yazi = pr.pre_process(text)
 ```
 
@@ -165,7 +166,7 @@ Haber metinleri üzerinden oluşturduğumuz modeller daha başarılı olduğu, p
 ## Sınıflandırma Modelinin Oluşturulması
 - Sınıflandırma işlemi öncesi sklearn kütüphanesi üzerinden CountVectorizer fonksiyonu ile haber metinleri vektöre çevrilmiştir.
 	- BoW (Bag of words) yöntemi kullanılmıştır. Vektörde her sütun bir kelimeyi, her satır ise haberde o kelimenin kaç defa geçtiğini temsil etmektedir. Tf–idf yöntemi de denenmiştir fakat performansı BoW’e göre geride kaldığı için analize eklenmemiştir.
-	- Vektöre dönüştürülme esnasında metinlerden türkçe dolgu sözcükleri (stop words) *&quot;Haber Metinlerinde Ön İşleme&quot;*  kısmında belirtildiği gibi çıkarılmıştır.
+	- Vektöre dönüştürülme esnasında metinlerden türkçe dolgu sözcükleri (stop words) *&quot;Haber Metinlerinde Ön-İşleme&quot;*  kısmında belirtildiği gibi çıkarılmıştır.
 
 ------------
 
@@ -199,6 +200,21 @@ Model oluşturma aşamaları **model_oluşturma** adlı jupyter notebook üzerin
 ------------
 
 Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için command promp&apos;ta proje dizinine gelinmeli ve **python haberlerde_kesif_cizici.py** yazarak çalıştırılmalıdır. Daha sonra istenilen kelimeler sistem uyarı verdiğinde (veritabanın büyüklüğü sebebi ile biraz bekletmektedir) aralarında bir boşluk olarak girilmelidir.
+
+## Twitter Üzerinden Gündem İncelemesi 
+- Twitter'da @nedenttoldu gibi birçok twitter gündemi anlık olarak yazan hesaplar bulunmaktadır. Bu hesaplar konular ya da kişiler neden TT oldu, 'Trending topics' listesindeki kelimelerin nedeni gibi konularda yazı yazmaktadırlar. Bu tarz hesapların incelenmesi ile twitter gündemini gün ve ay olmak üzere inceleyebiliriz. 11 Temmuz 2020 ile 3 Aralık 2019 tarihleri arasında @nedenttoldu hesabının attığı bütün tweetler çekilmiştir. Zaman aralığının dar olma sebebi Twitter'ın koymuş olduğu 3200 tweetlik sınırlamadır.
+
+- Tweetler haberler gibi ön-işleme adımlarından geçirilmiş ve geliştirmiş olduğumuz model ile sınıflandırılmıştır. Sonuçlar aşağıdaki grafikte verilmiştir. Ön-işleme adımları haber verisi işlemeye daha uygun olduğu için bazı tweetlerde temizleme işlemi sonucu linklerden ya da emojilerden artıklar kalmıştır.
+
+<a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot3.png" align="left" /></a>
+
+------------
+
+**twitter_kesif** adlı jupyter notebook ile aşama aşama yukarıda anlatılanları inceleyebilirsiniz.
+
+------------
+
+## Metinlerde Önemli Noktaları Bulma ve Özet Çıkarımı
 
 
 
