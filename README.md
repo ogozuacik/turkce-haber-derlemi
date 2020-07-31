@@ -5,7 +5,7 @@
 - Milliyet.com üzerinden 1997-2019 yılları arası çıkan haberler kullanılmıştır. Derlem açık kaynak olarak paylaşılmıştır.
 - Haber başlıklarına ek olarak haber metni ve özeti üzerinden de konu (kategorinin) tahmin edilmesi sağlanmıştır.
 - Sonuçlar üzerine analiz sunulmuştur.
-- Oluşturulan model ile son 6 aydaki twitter gündemi incelenmiştir.
+- Oluşturulan model ile Aralık 2019 ve Temmuz 2020 arası Twitter gündemi incelenmiştir. 
 
 Ek olarak çıkarım-bazlı özetleme (extractive summarization) algoritması olan Text Rank [3] kullanılarak metinlerde önemli noktaların bulunması ve özet çıkarımı sağlanmıştır.
 
@@ -205,7 +205,7 @@ Model oluşturma aşamaları **model_oluşturma** adlı jupyter notebook üzerin
 Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için command promp&apos;ta (komut istemi) proje dizinine gelinmeli ve **python haberlerde_kesif_cizici.py** yazarak çalıştırılmalıdır. Daha sonra istenilen kelimeler sistem uyarı verdiğinde (veritabanın büyüklüğü sebebi ile biraz bekletmektedir) aralarında bir boşluk olarak girilmelidir.
 
 ## Twitter Üzerinden Gündem İncelemesi 
-- Twitter'da @nedenttoldu gibi birçok twitter gündemi anlık olarak yazan hesaplar bulunmaktadır. Bu hesaplar konular ya da kişiler neden TT oldu, 'Trending topics' listesindeki kelimelerin nedeni gibi konularda yazı yazmaktadırlar. Bu tarz hesapların incelenmesi ile twitter gündemini gün ve ay olmak üzere inceleyebiliriz. 11 Temmuz 2020 ile 3 Aralık 2019 tarihleri arasında @nedenttoldu hesabının attığı bütün tweetler çekilmiştir. Zaman aralığının dar olma sebebi Twitter'ın koymuş olduğu 3200 tweetlik sınırlamadır.
+- Twitter'da @nedenttoldu gibi birçok Twitter gündemi anlık olarak yazan hesaplar bulunmaktadır. Bu hesaplar konular ya da kişiler neden TT oldu, 'Trending topics' listesindeki kelimelerin nedeni gibi konularda yazı yazmaktadırlar. Bu tarz hesapların incelenmesi ile Twitter gündemini gün ve ay olmak üzere inceleyebiliriz. 11 Temmuz 2020 ile 3 Aralık 2019 tarihleri arasında @nedenttoldu hesabının attığı bütün tweetler çekilmiştir. Zaman aralığının dar olma sebebi Twitter'ın koymuş olduğu 3200 tweetlik sınırlamadır.
 - Tweetler de haberler gibi ön-işleme adımlarından geçirilmiş ve geliştirmiş olduğumuz model (5-kategori) ile sınıflandırılmıştır. 7 günlük kayan pencere içerisinde kategorilere göre toplam kaç tweet atıldığı hesaplanmıştır. Sonuçlar aşağıdaki grafikte verilmiştir (lejandda parantez içerisinde verilen değer toplam o kategoride sınıflandırlan tweet sayısıdır). Ön-işleme adımları haber verisi işlemeye daha uygun olduğu için bazı tweetlerde temizleme işlemi sonucu linklerden ya da emojilerden artıklar kalmıştır.
 
 <a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot3.png" align="center" /></a>
