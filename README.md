@@ -208,6 +208,7 @@ Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için comm
 
 <a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/plot3.png" align="left" /></a>
 
+
 ------------
 
 **twitter_kesif** adlı jupyter notebook ile aşama aşama yukarıda anlatılanları inceleyebilirsiniz.
@@ -216,12 +217,36 @@ Kendi istediğiniz kelimeler ile alternatif olarak grafik oluşturmak için comm
 
 ## Metinlerde Önemli Noktaları Bulma ve Özet Çıkarımı
 
+- Metinlerde çıkarım-bazlı özetleme (extractive summarization) günümüzde dikkat çeken araştırma konularından biri olmuştur. Açık Hack yarışmalarında (2019-2020) birden fazla konu ile ilgili proje görebilmekteyiz. 
+
+- Proje kapsamında Text Rank [3] algoritması kullanılarak metin özetleyici ve önemli noktaları bulan bir model geliştirilmiştir. Model cümle vektörlerinin benzerlikleri üzerine bir çizge (graph) kurmaktadır. Bu graph üzerinde PageRank Algoritması ile en çok ziyaret edilen nokta (cümle) bulunmakta ve metindeki en önemli cümle seçilmektedir. Birden fazla cümle seçilir ise (en çok ziyaret edilenden en aza) bir özet ortaya çıkmaktadır. Algoritma önemli cümleleri bulmakta özelleştiği için genellikle özetlerde seçilen cümleler düzgün olsa da oluşan özet metni cümlelerin sıralaması açısından devrik olmaktadır.
+
+- Projenin geri kalanından bağımsız olarak FastText ve NetworkX kütüphaneleri kullanılmıştır. Vektör oluşturulmasında FastText kütüphanesinin oluşturmuş olduğu türkçe vektör modeli kullanılmıştır. Özetlemenin çalışması için [link](https://fasttext.cc/docs/en/crawl-vectors.html "link")'te bulunan sayfadan Türkçe için yapılmış ".bin" uzantılı dosyanın indirilmesi gerekmektedir.
+
+**Gereken ek paketler:**
+```python
+import nltk
+import fasttext
+import fasttext.util
+import networkx as nx
+
+from nltk.tokenize import sent_tokenize
+from sklearn.metrics.pairwise import cosine_similarity
+```
+
+------------
+
+**ozetci** adlı jupyter notebook ile milliyet derleminden seçeceğiniz herhangi bir haberi ya da dilediğiniz metnin önemli noktalarını çıkarabilirsiniz. İlgili dökümanda kademe kademe adımlar anlatılmıştır.
+
+------------
 
 
 ## Referanslar
 [1] Turkish Stemmer, Osman Tunçelli, [link](https://github.com/otuncelli/turkish-stemmer-python "link")
 
 [2] Türkçe Dolgu Sözcükleri, Necmettin Çarkacı, [link](https://github.com/ncarkaci/tr-preprocessing "link")
+
+[3] TextRank: Bringing Order into Texts, [link](https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf "link")
 
 <a href=""><img src="https://raw.githubusercontent.com/ogozuacik/turkce-haber-derlemi/master/figurler/logolar.png" align="left" /></a>
 
