@@ -5,7 +5,8 @@
 - Milliyet.com üzerinden 1997-2019 yılları arası çıkan haberler kullanılmıştır. Derlem açık kaynak olarak paylaşılmıştır.
 - Haber başlıklarına ek olarak haber metni ve özeti üzerinden de konu (kategorinin) tahmin edilmesi sağlanmıştır.
 - Sonuçlar üzerine analiz sunulmuştur.
-- Oluşturulan model ile Aralık 2019 ve Temmuz 2020 arası Twitter gündemi incelenmiştir. 
+- Oluşturulan model ile Aralık 2019 ve Temmuz 2020 arası Twitter gündemi incelenmiştir.
+- [Demo](https://youtu.be/emSfpT3rCII) 
 
 Ek olarak çıkarım-bazlı özetleme (extractive summarization) algoritması olan Text Rank [3] kullanılarak metinlerde önemli noktaların bulunması ve özet çıkarımı sağlanmıştır.
 
